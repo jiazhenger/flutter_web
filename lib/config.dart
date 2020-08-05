@@ -1,15 +1,29 @@
+@@ -1,26 +1,15 @@
 // ======================================================================================================== Package
 import 'package:flutter/material.dart';
+import 'package:flutter/foundation.dart';
+// ======================================================================================================== 配置
 // ======================================================================================================== Config
 class Config {
-    static const api = 'http://192.168.0.106:13330/api/';
-//    static const api = 'http://id.ngrok.nicol.wang/api/';
-    // 主体颜色
-    static const mainColor = Color(0xFF037EFF);
-    // 默认主体背景颜色
-    static const bodyColor = Color(0xFFf8f8f8f8);
-    // 主体内补白大闰
-    static const bodyPadding = [0,10];
-    // 正则验证
-    static RegExp phoneExp = new RegExp(r'1[0-9]\d{9}$');
+	static final mainColor = Colors.blue;
+	// 主题配置
+	static ThemeData themeData = ThemeData(
+		primarySwatch: Colors.blue
+	);
+
+	// 返回按钮
+	static BackButton backButton =  BackButton(color: Colors.white);
+//	static BackButton backButton =  IconButton( icon:Icon(Icons.chevron_left), onPressed:() => Navigator.pop(context, false));
+
+	// AppBar
+	static dynamic appBar(String title){
+		return AppBar(
+			title: Text(title, style:TextStyle(fontSize: 13.0)),
+			centerTitle:true,
+//			leading: BackButton(color: Colors.white)
+		);
+	}
+	// 判断平台
+	static bool isIos = defaultTargetPlatform == TargetPlatform.iOS;
+	static bool isAndroid = defaultTargetPlatform == TargetPlatform.android;
 }
