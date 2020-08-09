@@ -1,4 +1,3 @@
-@@ -1,26 +1,15 @@
 // ======================================================================================================== Package
 import 'package:flutter/material.dart';
 import 'package:flutter/foundation.dart';
